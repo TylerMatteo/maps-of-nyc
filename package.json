@@ -4,7 +4,13 @@
   "description": "A site to catalog different maps of New York City on the internet.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "eleventy",
+    "bench": "DEBUG=Eleventy:Benchmark* eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy",
+    "dev": "run-p watch serve"
   },
   "repository": {
     "type": "git",
