@@ -3,3 +3,26 @@ layout: page
 title: Maps of NYC
 ---
 <h1>Maps of NYC</h1>
+<p>Welcome to Maps of NYC. This is a collection of maps about New York City on the internet. You can view this project on <a href="https://github.com/TylerMatteo/maps-of-nyc">GitHub</a></p>
+<hr>
+<div class="summary-list">
+{% for map in collections.maps %}
+  <article>
+    <header>
+      <h2>
+        <a href="{{ map.data.link }}">{{ map.data.name }}</a>
+      </h2>
+      {% if map.data.tagline %}
+        <span>{{ map.data.tagline }}</span>
+      {% endif%}
+      <div class="links">
+        {% if map.data.repo %}
+        <a href="{{ map.data.repo }}">Code</a>        
+      {% endif%}
+      </div>
+      </header>
+      <p>{{ map.content | safe }}</p>
+      <hr>
+    </article>
+  {% endfor %}
+</div>
